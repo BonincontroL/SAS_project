@@ -1,0 +1,1367 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1344</x>
+      <y>24</y>
+      <w>328</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>halign=center
+*Design Class Diagram (DCD)*
+lw=0
+fontsize=30
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>868</y>
+      <w>88</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>ServiceException
+--
+fg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>892</x>
+      <y>860</y>
+      <w>88</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+fg=gray</panel_attributes>
+    <additional_attributes>200.0;10.0;200.0;60.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>944</x>
+      <y>836</y>
+      <w>52</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Exception
+--
+
+fg=magenta
+fg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>780</x>
+      <y>800</y>
+      <w>240</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>General module
+fg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>892</x>
+      <y>848</y>
+      <w>60</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+fg=gray</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>836</y>
+      <w>88</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>UseCaseLogicException
+--
+fg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1144</x>
+      <y>652</y>
+      <w>652</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>MenuManagement
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1188</x>
+      <y>672</y>
+      <w>140</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>MenuManager
+--
+-menuFeatures: String[]
+--
+*event sender methods*
++addReceiver(er: MenuEventReceiver)
++removeReceiver(er: MenuEventReceiver)
+-notifySectionAdded(sec: Section)
+-notifyMenuItemAdded(mi: MenuItem)
+-notifyMenuCreated(m: Menu)
+-notifyMenuDeleted(m: Menu)
+-notifySectionsRearranged(m: Menu)
+
+--
+*operations methods*
++defineSection(name: String)
++inserItem(r: Recipe, sec?: Section, desc?: String)
++createMenu(title: String): Menu
++getRecipeBook( ): ArrayList&lt;Recipe&gt;
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1248</x>
+      <y>784</y>
+      <w>48</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+eventReceivers
+m1=0..n
+fg=black</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1188</x>
+      <y>832</y>
+      <w>156</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>MenuEventReceiver
+{interface}
+--
+
+--
+/+updateSectionAdded(m: Menu, sec: Section)/
+/+updateMenuItemAdded(m: Menu, mi: MenuItem)/
+/+updateMenuCreated(m: Menu)/
+/+updateMenuDeleted(m: Menu)/
+/+updateSectionsRearranged(m: Menu)/
+
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1408</x>
+      <y>672</y>
+      <w>144</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Menu
+--
+-title: String
+-published: boolean
+-inUse: boolean
+-features: String[]
+-featureValues: boolean[]
+--
++create(owner: User, title: String, features: String[])
++addSection(name: String)
++addItem(r: Recipe, sec?: Section,
+                                        desc?: String)
++isOwner(user: User): boolean
++isInUse(): boolean
++hasSection(sec: Section): boolean
++sectionsSize(): int
++moveSection(sec: Section, pos: int)
++getFreeItems(): ArrayList&lt;MenuItem&gt;
++getSections(): ArrayList&lt;Section&gt; 
+
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1384</x>
+      <y>824</y>
+      <w>88</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>Section
+--
+- name: String
+--
++create(name: String)
++create(sec: Section)
++addItem(mi: MenuItem)
++ getName(): String
++ setName(name: String): void
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1480</x>
+      <y>836</y>
+      <w>104</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>MenuItem
+--
+- description: String
+--
++create(rec: Recipe, desc?: String)
++create(mi: MenuItem)
++getItemRecipe(): Recipe
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1492</x>
+      <y>788</y>
+      <w>36</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+freeItems
+fg=black</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1416</x>
+      <y>788</y>
+      <w>32</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+sections
+fg=black</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1396</x>
+      <y>872</y>
+      <w>104</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+sectionItems
+fg=black</panel_attributes>
+    <additional_attributes>220.0;10.0;220.0;110.0;10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1324</x>
+      <y>720</y>
+      <w>92</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+currentMenu
+m1=0..1
+fg=black</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1596</x>
+      <y>684</y>
+      <w>104</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Event
+--
+info: String
+--
+
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1548</x>
+      <y>696</y>
+      <w>56</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+menus
+fg=black</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1144</x>
+      <y>136</y>
+      <w>652</w>
+      <h>512</h>
+    </coordinates>
+    <panel_attributes>KitchenTaskManagement
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1152</x>
+      <y>264</y>
+      <w>296</w>
+      <h>172</h>
+    </coordinates>
+    <panel_attributes>KitechenTaskManager
+--
+
+--
+*event sender methods*
++addEventReceiver(kitchenTaskEventReciver: KitchenTaskEventReciver)
++notifyNewListCreated()
++notifyListDeleted()
++notifyNewTaskAdded(kitchenTask: KitchenTask)
++notifyTaskRemoved(kitchenTask: KitchenTask)
++notifyTaskChanged(kitchenTask: KitchenTask)
+
+--
+*operations methods*
++generateToDoList(service: Service): ToDoList
++openToDoList(service: Service): ToDoList
++deleteToDoList(service: Service): ToDoList
++addProcedure(procedure: Procedure): KitchenTask
++deleteProcedure(procedure: Procedure): Void
++deleteTask(kitchenTask: KitchenTask): Void
++sortToDoList(comparator: Comparator&lt;KitchenTask&gt;): Void
++getTurnTable( ): TurnTable
++getCurrentToDoList(): ToDoList
++addTask(procedure: Procedure, cooks?: ArrayList&lt;Cook&gt;, turn?: Turn): KitchenTask
++updateTask(kitchenTask: KitchenTask, procedure?: Procedure,cooks?: ArryList&lt;Cook&gt;, turn?: Turn): Void
++addFeatures(kitchenTask: KitchenTask, esteemTime?: Duration, amount?: Float): ToDoList
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1500</x>
+      <y>300</y>
+      <w>260</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>ToDoList
+--
+
+--
++create(service: Service)
++add(c: KitchenTask): Void
++deleteProcedure(procedure: Procedure): Void
++sort(comparator: Comparator&lt;KitchenTask&gt;): Void
++deleteTask(kitchenTask: KitchenTask): Void
++addFeatures(kitchenTask: KitechenTask,esteemTime?: Duration, amount?: Float): ToDoList
++deleteProcedure(procedure: Procedure): ArrayList&lt;KitchenTask&gt;
++clear(): Void
++contains(kitchenTask: KitchenTask):Boolean
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1552</x>
+      <y>380</y>
+      <w>24</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+tasks
+fg=black</panel_attributes>
+    <additional_attributes>10.0;200.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1652</x>
+      <y>380</y>
+      <w>28</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+service
+fg=black</panel_attributes>
+    <additional_attributes>10.0;210.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1652</x>
+      <y>464</y>
+      <w>108</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Service
+--
+-name: String
+-date: Date
+-timeStart: Time
+-timeEnd: Time
+-participants: int
+-info: String
+--
++create(name: String)
++getMenù(): Menù
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1292</x>
+      <y>460</y>
+      <w>304</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>KitchenTask
+--
+-esteemTime: Duration
+-amount: Float
+--
++create(cooks: ArrayList&lt;Cook&gt;, turn: Turn, procedure: Procedure, esteemTime: Duration, amount: Float)
++create(item: menùItem)
++create(procedure: Procedure)
++getCooks(): ArrayList&lt;Cook&gt;
++getTurn(): Turn
++getEsteemTime(): Duration
++getAmount(): Float
++getProcedure(): ArrayList&lt;Procedure&gt;
++setTurn(turn: Turn): Void
++setDuration(esteemTime: Duration): Void
++setAmount(amount: Flot): Void
++addCooks(cooks: ArrayList&lt;Cook&gt;): Void
++updateTask(procedure?: Procedure, turn?: Turn, cooks?: ArrayList&lt;Cook&gt;): Void
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1444</x>
+      <y>324</y>
+      <w>64</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+currentToDoList
+m1=0..1
+fg=black</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1412</x>
+      <y>204</y>
+      <w>64</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+receivers
+m1=0..n
+fg=black</panel_attributes>
+    <additional_attributes>140.0;10.0;10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1468</x>
+      <y>196</y>
+      <w>236</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>KitchenTaskEventReceiver
+{interface}
+--
+
+--
+/+updateNewListCreated(tdl: ToDoList)/
+/+updateListDeleted(tdl: ToDoList)/
+/+updateNewTaskAdded(kitchenTask: KitchenTask)/
+/+updateTaskRemoved(kitchenTask: KitchenTask)/
+/+updateTaskChanged(kitchenTask: KitchenTask)/
+
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>316</x>
+      <y>128</y>
+      <w>816</w>
+      <h>624</h>
+    </coordinates>
+    <panel_attributes>TurnManagement
+fg=black
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1812</x>
+      <y>356</y>
+      <w>420</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>RecipeManagement
+fg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1808</x>
+      <y>652</y>
+      <w>424</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>UserManagement
+fg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1656</x>
+      <y>532</y>
+      <w>32</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+
+
+services
+fg=black</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;380.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1548</x>
+      <y>532</y>
+      <w>188</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+menù
+fg=black</panel_attributes>
+    <additional_attributes>10.0;570.0;420.0;570.0;420.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>596</x>
+      <y>152</y>
+      <w>268</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>TurnManager
+--
+*event sender methods*
++addReceiver(tev: TurnEventReceiver)
++notifyModifyTurnRepetiton(turn:Turn)
++removeReceiver(ter: TurnEventReceiver)
++notifyModifyTurnRepetiton(turn:Turn)
++notifyNewRepetionCreate(repetition: Repeater)
++notifyTurnAdded(turn:Turn)
++notifyTurnDeleted(turn:Turn)
++notifyGroupsCreate(group:Grouper)
++notifyDeleteRepetition(turn:Turn)
++notifyDeleteGroup(group:Grouper)
+
+--
+*operations methods*
++ getTurnTable( ): TurnTable
++ createTurn(date:LocalDate, timeStart:float, 
+       imeEnd:float, location?:String,timeStartExtra:Duration,
+	       timeEndExtra:LocalDate,isServiceTurn:boolean ):Turn
+-calcolateCadence(turn.date:LocalDate, cadence:String, endDateRepeat:LocalDate): ArrayList&lt;LocalDate&gt;
++createRepetition(turn,cadence:String,endDateRipetition:Date):void
++createGroup(turn:Turn,otherTurn:Turn):void
++modifyTurn(turn:Turn):turn
++deleteTurn(turn:Turn):void
++modifyRepetition(turn,NewCadence,NewEndRipetitionDate):void
++modifyGroup(group:Grouper,newData:Data):void
++deleteGroup(group:Grouper):void
++deleteRepetitionTurn(turn:Turn,endDateRipetition:Date?):void
++createRipetitionGroup(group,cadence:String,endDateRipetition:Date)
++modifyRepetitionGroup(group:Grouper,cadence?,endRipetitionDate?:Date):void
++deleteRepetitionGroup(group:Grouper,dateStart:LocalDate,dateEnd:Date):void
+
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>388</y>
+      <w>184</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>TurnTable
+--
+- instance: TurnTable
+--
+- TurnTable()
++ getInstance(): TurnTable {static}
+
++addTurn(turn:Turn):void
++addRepetition(repetition):void
++addGroup(group):void
++checkAvailability(turn:Turn):boolean
++deleteTurn(turn:Turn):void
++getAllTurns():ArrayList&lt;Turn&gt;
++removeGroup(group):void
+
+
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>748</x>
+      <y>388</y>
+      <w>204</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>Turn
+--
+-data: Date
+-timeStart: float
+-timeEnd: float
+-location: String
+-isServiceTurn:boolean
+--
++createTurn(date:Date,timeStart:float,timeEnd:float,location:String,
+                       isServiceTurn:boolean):Turn
++hasRepetition():boolean
++isServiceTurn():boolean
++createRepetition(turn,cadence:String,endDateRipetition:Date):void
++deleteTurn(turn:Turn):void
++modifyTurn(turn:Turn):turn
++deleteRepetitioTurn(turn:Turn,endDateRipetition:Date?):void
++modifyRepetition(turn:Turn,NewCadenc:Stinge,NewEndRipetitionDate):void
+
+
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>672</x>
+      <y>500</y>
+      <w>100</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+turns
+fg=black</panel_attributes>
+    <additional_attributes>210.0;10.0;210.0;30.0;10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>916</x>
+      <y>172</y>
+      <w>208</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>TurnEventReceiver
+{interface}
+--
+/+updateTurnAdded(turn:Turn)/
+/+updateModifyTurnRepetiton(turn:Turn)/
+/+updateTurnDeleted(turn:Turn)/
+/+updateDeleteGroup(group:Grouper)/
+/+updateNewRepetionCreate(turn:Turn, repetion:Repeater)/
+/+updateDeleteRepetition(turn)/
+/+updateNewGroupsCreate(group)/
+
+
+
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>692</x>
+      <y>348</y>
+      <w>36</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+turnTable
+fg=black</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>540</y>
+      <w>172</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>serviceTurn
+--
+-timeStartAdditional: int
+-timeEndAdditional: int
+--
++createTurn(date,timeStart
+				,timeEnd:LocalDate,location,AdditionalStartTime:Duration,
+                    AdditionalEndTime:Duration):Turn
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>540</y>
+      <w>212</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>kitchenTurn
+--
+-isComplete:boolean
+--
++createGroup(otherTurn:Turn):void
++setGroup(group):void
++hasGroup():boolean
++createGroup(turn:Turn,otherTurn:Turn):void
++createRipetitionGroup(group,cadence:String,endDateRipetition:Date)
++modifyGroup(group:Grouper,newData:Data):void
++deleteGroup(group:Grouper):void
++modifyRepetitionGroup(group:Grouper,cadence?,endRipetitionDate?:Date):void
++deleteRepetitionGroup(group:Grouper,dateStart:LocalDate,dateEnd:Date):void
+
+
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>500</y>
+      <w>12</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>856</x>
+      <y>500</y>
+      <w>12</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>860</x>
+      <y>204</y>
+      <w>64</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+receivers
+fg=black</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>788</x>
+      <y>348</y>
+      <w>40</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+currentTurn
+fg=black</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1024</x>
+      <y>528</y>
+      <w>276</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=      0..1
+turn
+fg=black</panel_attributes>
+    <additional_attributes>10.0;110.0;130.0;110.0;130.0;20.0;670.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1920</x>
+      <y>376</y>
+      <w>88</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>ProcedureManager
+--
+
+
+--
+
+fg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1900</x>
+      <y>480</y>
+      <w>120</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>Procedure
+fg=gray
+--
+-name:String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1840</x>
+      <y>584</y>
+      <w>120</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>Prepartion
+fg=gray
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1988</x>
+      <y>580</y>
+      <w>92</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>Recipe
+
+fg=gray
+--
+
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1956</x>
+      <y>440</y>
+      <w>56</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=0..1
+currentProcedure
+fg=black</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1908</x>
+      <y>544</y>
+      <w>12</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+fg=black
+</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2004</x>
+      <y>544</y>
+      <w>12</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+fg=black
+</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1592</x>
+      <y>524</y>
+      <w>316</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+procedure
+fg=black
+</panel_attributes>
+    <additional_attributes>770.0;10.0;440.0;10.0;440.0;140.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1132</x>
+      <y>588</y>
+      <w>900</w>
+      <h>392</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+cook
+fg=black</panel_attributes>
+    <additional_attributes>2210.0;410.0;2210.0;950.0;10.0;960.0;10.0;100.0;940.0;100.0;940.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1860</x>
+      <y>732</y>
+      <w>104</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>UserManager
+--
+
+--
+*event sender methods*
+
+
+--
+*operations methods*
++getCurrentUser(): User
+fg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1892</x>
+      <y>708</y>
+      <w>124</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+currentUser
+m1=0..1
+fg=black</panel_attributes>
+    <additional_attributes>290.0;20.0;10.0;20.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2008</x>
+      <y>676</y>
+      <w>64</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>User
+
+--
+-name: String
+
+--
++isChef( ): boolean
++isCook( ): boolean
++isOrganizer():boolean
++isStaff():boolean
++hasRole(role: Role)
++getRoles(): Set&lt;Role&gt;
+
+
+fg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>948</x>
+      <y>468</y>
+      <w>1068</w>
+      <h>532</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+available
+fg=black</panel_attributes>
+    <additional_attributes>2650.0;570.0;2260.0;570.0;2260.0;1300.0;290.0;1310.0;290.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1548</x>
+      <y>680</y>
+      <w>468</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+owner
+m1=1
+fg=black</panel_attributes>
+    <additional_attributes>1150.0;10.0;530.0;10.0;530.0;240.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1656</x>
+      <y>720</y>
+      <w>420</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+                                               ownerChef
+fg=black</panel_attributes>
+    <additional_attributes>1010.0;80.0;1010.0;560.0;10.0;560.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1512</x>
+      <y>620</y>
+      <w>532</w>
+      <h>348</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+itemRecipe
+fg=black</panel_attributes>
+    <additional_attributes>1310.0;10.0;1310.0;30.0;570.0;30.0;570.0;850.0;10.0;850.0;10.0;640.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>336</y>
+      <w>164</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>Repeater
+--
+-ArrayList&lt;Turn&gt;
+--
++create(currentTurn:Turn, listCadence:ArrayList&lt;Date&gt;,
+                 endDateRepeat:Date)
++modifyRepetition(turn:Turn,NewCadence,
+        NewEndRipetitionDate:Date)
++getTurns():ArrayList&lt;Turn&gt;
++create(turn:Turn, cadence, endDateRepeat:Date):void
++deleteTurn(turn):void
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>364</y>
+      <w>56</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+repetes
+fg=black</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0;60.0;160.0;120.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>536</y>
+      <w>448</w>
+      <h>148</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+group
+fg=black</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;350.0;1100.0;350.0;1100.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>352</x>
+      <y>460</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Grouper
+--
+-ArrayList&lt;Turn&gt;
+--
++creatcreateGroup(turn:Turn,otherTurn.Turn):void
++deleteGroup(group):void
++getGroup():ArrayList&lt;Turn&gt;
+
+fg=black</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>508</x>
+      <y>456</y>
+      <w>60</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+groups
+fg=black</panel_attributes>
+    <additional_attributes>10.0;150.0;60.0;150.0;60.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>332</x>
+      <y>380</y>
+      <w>712</w>
+      <h>344</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..1
+repetiton
+fg=black</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0;10.0;840.0;1760.0;840.0;1760.0;150.0;1550.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>532</y>
+      <w>988</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+           ServiceTurns
+fg=black
+lw=1.5</panel_attributes>
+    <additional_attributes>10.0;230.0;10.0;400.0;1010.0;400.0;1010.0;160.0;2450.0;160.0;2450.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>424</x>
+      <y>408</y>
+      <w>28</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+groups
+fg=black</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1800</x>
+      <y>472</y>
+      <w>108</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=0..n
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+usedProcedure
+fg=black
+</panel_attributes>
+    <additional_attributes>100.0;340.0;10.0;340.0;10.0;90.0;250.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2016</x>
+      <y>508</y>
+      <w>80</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=0..n
+procedures
+fg=black
+</panel_attributes>
+    <additional_attributes>180.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2088</x>
+      <y>488</y>
+      <w>136</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>CookBook
+--
+-instance: CookBook
+--
+-CookBook()
++getInstance(): CookBook {static}
++getRecipeNames(): ArrayList&lt;String&gt; {static}
+
+fg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2116</x>
+      <y>676</y>
+      <w>64</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+Role
+
+--
++ORGANIZER
++CHEF
++COOK
++STAFF
+
+
+
+
+fg=gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2068</x>
+      <y>704</y>
+      <w>56</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+roles
+m1=0..n
+fg=black</panel_attributes>
+    <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>472</x>
+      <y>316</y>
+      <w>104</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+turnTable
+fg=black</panel_attributes>
+    <additional_attributes>230.0;180.0;230.0;20.0;10.0;20.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>456</x>
+      <y>500</y>
+      <w>124</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+turnTable
+fg=black</panel_attributes>
+    <additional_attributes>280.0;10.0;280.0;140.0;10.0;140.0;10.0;100.0</additional_attributes>
+  </element>
+</diagram>
